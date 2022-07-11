@@ -1,0 +1,19 @@
+server:
+  port: 8023
+  #应用名称（nacos会将该名称作为服务名称）
+spring:
+  application:
+    name: product-service
+  cloud:
+    nacos:
+      #nginx 反向代理地址
+      server-addr: 127.0.0.1:8847
+      discovery:
+        username: nacos
+        password: nacos
+      #  namespace: public 相同的服务特征进行分组管理
+      #  ephemeral: false 永久实例 哪怕宕机了也不会删除实例，默认 true（临时实例）
+      #  service: 默认取 ${spring.application.name} ，也可以通过该配置
+      #  group: 默认DEFAULT_GROUP 更细的分组管理
+      #  weight: 通常要结合 安装 权重的负载均衡策略，权重越高分配的流量越大
+
